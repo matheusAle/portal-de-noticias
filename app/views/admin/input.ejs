@@ -1,0 +1,9 @@
+<div class="form-group">
+    <label for="<%= name %>"><%= label %></label>
+    <% if (validation) { %>
+        <input type="<%= type ? type : 'text' %>" id="<%= name %>" name="<%= name %>" placeholder="<%= placeholder %>" value="<%= validation.value %>" class="form-control"/>
+		<small> <%= validation.msg %> </small>
+    <% } else { %>
+        <input type="<%= type ? type : 'text' %>" id="<%= name %>" name="<%= name %>" placeholder="<%= placeholder %>" class="form-control"/>    
+    <% } %>
+</div>
