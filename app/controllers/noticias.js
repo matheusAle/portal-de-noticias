@@ -12,7 +12,6 @@ export default class NoticiaController {
     
     async getNoticia(req, res) {
         const noticia = await this.dao.getNoticia(req.params.id);
-        console.log(noticia);
         res.render('noticias/noticia', { noticia });        
     }
     
@@ -34,13 +33,13 @@ export default class NoticiaController {
             res.render('admin/form_add_noticia', { validation: validationResult });
             return;
         }
-        await this.dao.salvarNovaNoticia({
-            titulo: req.body.titulo,
-            noticia: req.body.noticia,
-            resumo: req.body.resumo,
-            data_criacao: req.body.data_noticia,
-            autor: req.body.autor
-        });
+        await this.dao.salvarNovaNoticia([
+            req.body.titulo,
+            req.body.noticia,
+            req.body.data_noticia,
+            req.body.resumo,
+            req.body.autor
+        ]);
         res.redirect('/noticias');
     }
     

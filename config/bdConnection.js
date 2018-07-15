@@ -1,10 +1,18 @@
-import { createConnection as cc } from 'mysql';
 
-export function createConnection() {
-	return cc({
-		host: 'localhost',
-		user: 'root',
-		password: '',
-		database: 'portal_noticias'
-	});	
+import { Client } from 'pg';
+export function createConnection() {	
+	
+	const conn =  new Client({
+		user: 'jgfnbmmdhtjbkz',
+		host: 'ec2-184-73-174-171.compute-1.amazonaws.com',
+		database: 'dc4ki9vje1ooac',
+		password: 'd4de0b422e721f8d6b91997e379dc85cab88e9b74dc37da6060459a12fefa6da',
+		port: 5432,
+		connect_timeout: 0,
+		ssl: {
+			rejectUnauthorized: false,
+		}
+	})
+	conn.connect();
+	return conn;
 }
