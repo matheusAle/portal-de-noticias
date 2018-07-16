@@ -42,6 +42,8 @@ app.controllers = {
 new _noticia.NoticiaRoute(app);
 new _home.HomeRoute(app);
 
-app.listen(8080, function () {
+
+const port = process.env.PORT || 3000;
+app.listen(port, function () {
     return console.log('open in 8080.');
 });
