@@ -1,12 +1,13 @@
+
 import express from 'express'
 import { urlencoded } from 'body-parser'
 import expressValidator from 'express-validator'
-import { createConnection } from '../config/bdConnection'
+import { createConnection } from './config/bdConnection'
 
-import { NoticiaRoute } from '../app/routes/noticia'
-import { HomeRoute } from '../app/routes/home'
-import NoticiaController from '../app/controllers/noticias'
-import HomeController from '../app/controllers/home'
+import { NoticiaRoute } from './routes/noticia'
+import { HomeRoute } from './routes/home'
+import NoticiaController from './controllers/noticias'
+import HomeController from './controllers/home'
 
 const app = express()
 app.set('view engine', 'ejs')
@@ -24,4 +25,4 @@ app.controllers = {
 new NoticiaRoute(app)
 new HomeRoute(app)
 
-export default app
+app.listen(8080, () => console.log('open in 8080.'));

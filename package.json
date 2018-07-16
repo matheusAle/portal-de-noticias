@@ -2,10 +2,12 @@
     "name": "prj1-portal",
     "version": "1.0.0",
     "description": "",
-    "main": "app.js",
+    "main": "dist/app.js",
     "scripts": {
-        "start": "nodemon --exec babel-node ./app.js --ignore db.json",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "node dist/app.js",
+        "start-dev": "nodemon --exec babel-node ./app/app.js --presets es2015",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "babel app -d dist --presets es2015"
     },
     "keywords": [],
     "author": "",
@@ -21,18 +23,32 @@
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
+        "babel-core": "^6.1.4",
+        "babel-loader": "^6.1.0",
+        "babel-plugin-syntax-async-functions": "^6.13.0",
+        "babel-plugin-transform-regenerator": "^6.26.0",
+        "babel-polyfill": "^6.1.4",
         "babel-preset-env": "^1.7.0",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-react": "^6.1.4",
+        "babel-preset-stage-0": "^6.24.1",
+        "babel-preset-stage-2": "^6.24.1",
+        "babel-runtime": "^6.1.4",
         "eslint-plugin-babel": "^5.1.0",
         "nodemon": "^1.18.2"
     },
     "babel": {
         "presets": [
-            "env"
+            "es2015"
+        ],
+        "plugins": [
+            "syntax-async-functions",
+            "transform-regenerator"
         ]
     },
     "nodemonConfig": {
         "ignore": [
-            "db.json"
+            "app/*"
         ]
     },
     "engines": {
