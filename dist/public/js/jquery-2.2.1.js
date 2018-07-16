@@ -1,6 +1,10 @@
 "use strict";
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof2 = require("babel-runtime/helpers/typeof");
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /*!
  * jQuery JavaScript Library v2.2.1
@@ -18,7 +22,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 (function (global, factory) {
 
-	if ((typeof module === "undefined" ? "undefined" : _typeof(module)) === "object" && _typeof(module.exports) === "object") {
+	if ((typeof module === "undefined" ? "undefined" : (0, _typeof3.default)(module)) === "object" && (0, _typeof3.default)(module.exports) === "object") {
 		// For CommonJS and CommonJS-like environments where a proper `window`
 		// is present, execute the factory and get jQuery.
 		// For environments that do not have a `window` with a `document`
@@ -197,7 +201,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		}
 
 		// Handle case when target is a string or something (possible in deep copy)
-		if ((typeof target === "undefined" ? "undefined" : _typeof(target)) !== "object" && !jQuery.isFunction(target)) {
+		if ((typeof target === "undefined" ? "undefined" : (0, _typeof3.default)(target)) !== "object" && !jQuery.isFunction(target)) {
 			target = {};
 		}
 
@@ -314,7 +318,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			}
 
 			// Support: Android<4.0, iOS<6 (functionish RegExp)
-			return (typeof obj === "undefined" ? "undefined" : _typeof(obj)) === "object" || typeof obj === "function" ? class2type[toString.call(obj)] || "object" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
+			return (typeof obj === "undefined" ? "undefined" : (0, _typeof3.default)(obj)) === "object" || typeof obj === "function" ? class2type[toString.call(obj)] || "object" : typeof obj === "undefined" ? "undefined" : (0, _typeof3.default)(obj);
 		},
 
 		// Evaluates a script in a global context
@@ -3781,7 +3785,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			}
 
 			// Sets multiple values
-			if ((typeof key === "undefined" ? "undefined" : _typeof(key)) === "object") {
+			if ((typeof key === "undefined" ? "undefined" : (0, _typeof3.default)(key)) === "object") {
 				return this.each(function () {
 					dataUser.set(this, key);
 				});
@@ -4252,7 +4256,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		var origFn, type;
 
 		// Types can be a map of types/handlers
-		if ((typeof types === "undefined" ? "undefined" : _typeof(types)) === "object") {
+		if ((typeof types === "undefined" ? "undefined" : (0, _typeof3.default)(types)) === "object") {
 
 			// ( types-Object, selector, data )
 			if (typeof selector !== "string") {
@@ -4896,7 +4900,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				jQuery(types.delegateTarget).off(handleObj.namespace ? handleObj.origType + "." + handleObj.namespace : handleObj.origType, handleObj.selector, handleObj.handler);
 				return this;
 			}
-			if ((typeof types === "undefined" ? "undefined" : _typeof(types)) === "object") {
+			if ((typeof types === "undefined" ? "undefined" : (0, _typeof3.default)(types)) === "object") {
 
 				// ( types-object [, selector] )
 				for (type in types) {
@@ -5903,7 +5907,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 			// Check if we're setting a value
 			if (value !== undefined) {
-				type = typeof value === "undefined" ? "undefined" : _typeof(value);
+				type = typeof value === "undefined" ? "undefined" : (0, _typeof3.default)(value);
 
 				// Convert "+=" or "-=" to relative numbers (#7345)
 				if (type === "string" && (ret = rcssNum.exec(value)) && ret[1]) {
@@ -6584,7 +6588,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	});
 
 	jQuery.speed = function (speed, easing, fn) {
-		var opt = speed && (typeof speed === "undefined" ? "undefined" : _typeof(speed)) === "object" ? jQuery.extend({}, speed) : {
+		var opt = speed && (typeof speed === "undefined" ? "undefined" : (0, _typeof3.default)(speed)) === "object" ? jQuery.extend({}, speed) : {
 			complete: fn || !fn && easing || jQuery.isFunction(speed) && speed,
 			duration: speed,
 			easing: fn && easing || easing && !jQuery.isFunction(easing) && easing
@@ -7166,7 +7170,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		},
 
 		toggleClass: function toggleClass(value, stateVal) {
-			var type = typeof value === "undefined" ? "undefined" : _typeof(value);
+			var type = typeof value === "undefined" ? "undefined" : (0, _typeof3.default)(value);
 
 			if (typeof stateVal === "boolean" && type === "string") {
 				return stateVal ? this.addClass(value) : this.removeClass(value);
@@ -7430,7 +7434,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			ontype = type.indexOf(":") < 0 && "on" + type;
 
 			// Caller can pass in a jQuery.Event object, Object, or just an event type string
-			event = event[jQuery.expando] ? event : new jQuery.Event(type, (typeof event === "undefined" ? "undefined" : _typeof(event)) === "object" && event);
+			event = event[jQuery.expando] ? event : new jQuery.Event(type, (typeof event === "undefined" ? "undefined" : (0, _typeof3.default)(event)) === "object" && event);
 
 			// Trigger bitmask: & 1 for native handlers; & 2 for jQuery (always true)
 			event.isTrigger = onlyHandlers ? 2 : 3;
@@ -8037,7 +8041,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		ajax: function ajax(url, options) {
 
 			// If url is an object, simulate pre-1.5 signature
-			if ((typeof url === "undefined" ? "undefined" : _typeof(url)) === "object") {
+			if ((typeof url === "undefined" ? "undefined" : (0, _typeof3.default)(url)) === "object") {
 				options = url;
 				url = undefined;
 			}
@@ -8616,7 +8620,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				} else {
 
 					// Item is non-scalar (array or object), encode its numeric index.
-					buildParams(prefix + "[" + ((typeof v === "undefined" ? "undefined" : _typeof(v)) === "object" && v != null ? i : "") + "]", v, traditional, add);
+					buildParams(prefix + "[" + ((typeof v === "undefined" ? "undefined" : (0, _typeof3.default)(v)) === "object" && v != null ? i : "") + "]", v, traditional, add);
 				}
 			});
 		} else if (!traditional && jQuery.type(obj) === "object") {
@@ -9056,7 +9060,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			params = undefined;
 
 			// Otherwise, build a param string
-		} else if (params && (typeof params === "undefined" ? "undefined" : _typeof(params)) === "object") {
+		} else if (params && (typeof params === "undefined" ? "undefined" : (0, _typeof3.default)(params)) === "object") {
 			type = "POST";
 		}
 

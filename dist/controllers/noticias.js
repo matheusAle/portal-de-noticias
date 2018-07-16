@@ -4,20 +4,30 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _regenerator = require('babel-runtime/regenerator');
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
 
 var _NoticiaDAO = require('../models/NoticiaDAO');
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var NoticiaController = function () {
     function NoticiaController(app) {
-        _classCallCheck(this, NoticiaController);
+        (0, _classCallCheck3.default)(this, NoticiaController);
 
         this.dao = new _NoticiaDAO.NoticiaDAO(app.config.bd);
     }
 
-    _createClass(NoticiaController, [{
+    (0, _createClass3.default)(NoticiaController, [{
         key: 'incluirNoticia',
         value: function incluirNoticia(req, res) {
             res.render('admin/form_add_noticia', { validation: undefined });
@@ -26,12 +36,12 @@ var NoticiaController = function () {
         key: 'getNoticia',
         value: function getNoticia(req, res) {
             var noticia;
-            return regeneratorRuntime.async(function getNoticia$(_context) {
+            return _regenerator2.default.async(function getNoticia$(_context) {
                 while (1) {
                     switch (_context.prev = _context.next) {
                         case 0:
                             _context.next = 2;
-                            return regeneratorRuntime.awrap(this.dao.getNoticia(req.params.id));
+                            return _regenerator2.default.awrap(this.dao.getNoticia(req.params.id));
 
                         case 2:
                             noticia = _context.sent;
@@ -49,12 +59,12 @@ var NoticiaController = function () {
         key: 'listarNoticias',
         value: function listarNoticias(req, res) {
             var noticias;
-            return regeneratorRuntime.async(function listarNoticias$(_context2) {
+            return _regenerator2.default.async(function listarNoticias$(_context2) {
                 while (1) {
                     switch (_context2.prev = _context2.next) {
                         case 0:
                             _context2.next = 2;
-                            return regeneratorRuntime.awrap(this.dao.getNoticias());
+                            return _regenerator2.default.awrap(this.dao.getNoticias());
 
                         case 2:
                             noticias = _context2.sent;
@@ -72,7 +82,7 @@ var NoticiaController = function () {
         key: 'salvarNoticia',
         value: function salvarNoticia(req, res) {
             var validationResult;
-            return regeneratorRuntime.async(function salvarNoticia$(_context3) {
+            return _regenerator2.default.async(function salvarNoticia$(_context3) {
                 while (1) {
                     switch (_context3.prev = _context3.next) {
                         case 0:
@@ -89,7 +99,7 @@ var NoticiaController = function () {
                             }
 
                             _context3.next = 9;
-                            return regeneratorRuntime.awrap(req.getValidationResult());
+                            return _regenerator2.default.awrap(req.getValidationResult());
 
                         case 9:
                             validationResult = _context3.sent.mapped();
@@ -99,7 +109,7 @@ var NoticiaController = function () {
 
                         case 12:
                             _context3.next = 14;
-                            return regeneratorRuntime.awrap(this.dao.salvarNovaNoticia([req.body.titulo, req.body.noticia, req.body.data_noticia, req.body.resumo, req.body.autor]));
+                            return _regenerator2.default.awrap(this.dao.salvarNovaNoticia([req.body.titulo, req.body.noticia, req.body.data_noticia, req.body.resumo, req.body.autor]));
 
                         case 14:
                             res.redirect('/noticias');
@@ -112,7 +122,6 @@ var NoticiaController = function () {
             }, null, this);
         }
     }]);
-
     return NoticiaController;
 }();
 
