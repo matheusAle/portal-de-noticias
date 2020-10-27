@@ -20,7 +20,7 @@
         "ejs": "^2.6.1",
         "express": "^4.16.3",
         "express-validator": "^5.2.0",
-        "pg": "^7.4.3",
+        "pg": "^8.4.2",
         "rm": "^0.1.8"
     },
     "devDependencies": {
