@@ -19,7 +19,7 @@
         "consign": "^0.1.6",
         "ejs": "^2.6.1",
         "express": "^4.16.3",
-        "express-validator": "^5.2.0",
+        "express-validator": "^6.10.1",
         "pg": "^7.4.3",
         "rm": "^0.1.8"
     },
