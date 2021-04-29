@@ -1,0 +1,19 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "08:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: express-validator
+    versions:
+    - 6.10.0
+    - 6.9.2
+  - dependency-name: pg
+    versions:
+    - 8.5.1
+  - dependency-name: ejs
+    versions:
+    - 3.1.5
